@@ -48,6 +48,7 @@ Ramcpu () {
 echo "RAM"
 echo "--------------------------------------------------------------------------------"
 head /proc/meminfo
+free -m
 echo "--------------------------------------------------------------------------------"
 echo "CPU"
 head /proc/cpuinfo
@@ -56,14 +57,11 @@ head /proc/cpuinfo
 # With this function we output the information about CPU (more detailed), kernel etc.
 
 Cores () {
-echo 'CPU CORES'
-free -m
-echo '--------------------------------------------------------------------------------'
 lscpu
 echo '--------------------------------------------------------------------------------'
 df -h
 echo '--------------------------------------------------------------------------------'
-uname --version
+uname -a
 }
 
 Ping
